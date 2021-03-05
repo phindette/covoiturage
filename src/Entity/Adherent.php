@@ -27,6 +27,11 @@ class Adherent
      */
     private $nom;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateNaissance;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Adherent
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->dateNaissance;
+    }
+
+    public function setDateNaissance(\DateTimeInterface $dateNaissance): self
+    {
+        $this->dateNaissance = $dateNaissance;
 
         return $this;
     }
